@@ -15,13 +15,13 @@ To write a python program to implement Breadth first Search.
 ### Program :
 ```
 graph = {
-    '2' : ['3','4'],
-    '3' : ['5'],
-    '4' : ['6','7'],
+    '1' : ['2','3'],
+    '2' : ['4','5'],
+    '3' : ['6','7'],
+    '4' : [],
+    '5' : [],
     '6' : [],
-    '5' : ['6'],
-    '7' : ['8'],
-    '8' : []
+    '7' : []
 }
 
 visited = []
@@ -42,8 +42,8 @@ bfs(visited, '2', graph)
 ```
 
 ### Output:
+![WhatsApp Image 2024-02-17 at 3 56 48 PM](https://github.com/Dhanush200330/AI_Lab_2023-24/assets/143871525/9c006717-3e54-4881-9b0e-002daa8e892d)
 
-![Screenshot 2024-02-17 111210](https://github.com/keerthysesha/AI_Lab_2023-24/assets/125575936/d086059f-f640-4578-9cce-cbd65c080e29)
 
 ### Result:
 Thus the breadth first search order was found sucessfully.
