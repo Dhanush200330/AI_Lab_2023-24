@@ -1,54 +1,43 @@
-# Ex.No: 8  Logic Programming –  Medical Diagnosis Expert System
-### DATE: 23/03/2024                                                                            
+# Ex.No: 7  Logic Programming –  Logic Circuit Design
+### DATE: 19/03/2024                                                                           
 ### REGISTER NUMBER : 212221040037
 ### AIM: 
-Write a Prolog program to build a medical Diagnosis Expert System.
+To write a logic program to design a circuit like half adder and half subtractor.
 ###  Algorithm:
-1. Start the program.
-2. Write the rules for each diseases.
-3. If patient have mumps then symptoms are fever and swollen glands.
-4. If patient have cough, sneeze and running nose then disease is measles.
-5. if patient have symptoms headache ,sneezing ,sore_throat, runny_nose and  chills then disease is common cold.
-6. Define rules for all disease.
-7. Call the predicates and Collect the symptoms of Patient and give the hypothesis of disease.
-        
+1. Start the Program
+2. Design a AND gate logic if both inputs are 1 then output is 1.
+3. Design a OR gate logic if any one of input is 1 then output is 1.
+4. Design a XOR gate logic if both inputs are different then output is 1.
+5. Design a NOT gate logic if input is 0 then output is 1.
+6. Design a half adder and half subtractor using the rules.
+7. Test the logic.
+8. Stop the program.
 
 ### Program:
-```pl
-hypothesis(Patient,german_measles) :- 
- symptom(Patient,fever), 
- symptom(Patient,headache), 
- symptom(Patient,runny_nose), 
- symptom(Patient,rash). 
-hypothesis(Patient,flu) :- 
- symptom(Patient,fever), 
- symptom(Patient,headache), 
- symptom(Patient,body_ache), 
- symptom(Patient,conjunctivitis), 
- symptom(Patient,chills), 
- symptom(Patient,sore_throat), 
- symptom(Patient,runny_nose), 
- symptom(Patient,cough). 
-hypothesis(Patient,common_cold) :- 
- symptom(Patient,headache), 
- symptom(Patient,sneezing), 
- symptom(Patient,sore_throat). 
-hypothesis(Patient,chicken_pox) :- 
- symptom(Patient,fever), 
- symptom(Patient,chills), 
- symptom(Patient,body_ache), 
- symptom(Patient,rash).
-hypothesis(Patient,measles) :- 
- symptom(Patient,cough), 
- symptom(Patient,sneezing), 
- symptom(Patient,runny_nose). 
-symptom(raju,headache). 
-symptom(raju,sneezing). 
-symptom(raju,sore_throat).
+```
+and(0,0,0).
+and(0,1,0).
+and(1,1,1).
+and(1,0,0).
+xor(0,0,0).
+xor(0,1,1).
+xor(1,0,1).
+xor(1,1,0).
+not(0,1).
+not(1,0).
+halfadder(A,B,S,C):-
+    xor(A,B,S),
+    and(A,B,C).
+halfsubtractor(A,B,Diff,Bo):-
+    xor(A,B,Diff),
+    not(A,X),
+    and(B,X,Bo).
 ```
 ### Output:
-![316233129-a32de606-74c6-4657-bccc-3cc7af6d113b](https://github.com/YugendarM/AI_Lab_2023-24/assets/119681539/31214b08-54bb-4421-b5a9-48c72a4fb796)
+![313907709-31bc378d-ec6a-4b52-8d0c-e0566b189284](https://github.com/YugendarM/AI_Lab_2023-24/assets/119681539/658063e1-a577-4d49-878e-df8b1e0a0d56)
+![313909066-131f693b-618d-42bc-81d9-392d0866b025](https://github.com/YugendarM/AI_Lab_2023-24/assets/119681539/465cb059-40e4-4ad1-b890-4097578fb02e)
+
 
 
 ### Result:
-Thus the simple medical diagnosis system was built sucessfully.
+Thus the truth table of circuit verified sucessfully.
